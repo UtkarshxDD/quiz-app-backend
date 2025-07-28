@@ -12,12 +12,13 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? 'https://your-deployed-frontend-url.com' 
-    : 'http://localhost:3000',
+  origin: [
+    'http://localhost:3000',
+    'https://quiz-app-frontend-eight-eta.vercel.app', // Replace with your Vercel URL
+    'https://*.vercel.app'// Allow all Vercel preview deployments
+  ],
   credentials: true
 }));
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
