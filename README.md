@@ -1,11 +1,13 @@
 📝 Quiz Application - MERN Stack
 A modern, full-featured quiz application built with the MERN stack (MongoDB, Express.js, React, Node.js) featuring a sleek tech-inspired dark theme.
-Backend Github Rep : https://github.com/UtkarshxDD/quiz-app-backend/
+
+🔗 Repository Links
+Backend Repository: https://github.com/UtkarshxDD/quiz-app-backend
 
 🚀 Live Demo
-Frontend: https://quiz-app-frontend-eight-eta.vercel.app/
+Frontend: https://quiz-app-frontend-eight-eta.vercel.app
 
-Backend API: https://quiz-app-backend-2nnz.onrender.com/
+Backend API: https://quiz-app-backend-2nnz.onrender.com
 
 ✨ Features
 Core Functionality
@@ -80,17 +82,17 @@ Git
 Installation
 Clone the repository
 
-text
+bash
 git clone https://github.com/UtkarshxDD/quiz-app-backend/
 cd quiz-app
 Backend Setup
 
-text
+bash
 cd server
 npm install
 Frontend Setup
 
-text
+bash
 cd ../client
 npm install
 Environment Configuration
@@ -109,12 +111,12 @@ REACT_APP_API_URL=http://localhost:5000/api
 Running the Application
 Start Backend Server
 
-text
+bash
 cd server
 npm run dev
 Start Frontend (in a new terminal)
 
-text
+bash
 cd client
 npm start
 Access the Application
@@ -161,3 +163,97 @@ POST /api/quiz/submit/:quizId - Submit completed quiz
 GET /api/quiz/results/:quizId - Retrieve quiz results
 
 GET /api/health - Health check endpoint
+
+Example API Usage
+Start Quiz:
+
+bash
+curl -X POST https://quiz-app-backend-2nnz.onrender.com/api/quiz/start \
+  -H "Content-Type: application/json" \
+  -d '{"email":"user@example.com"}'
+Submit Answer:
+
+bash
+curl -X PUT https://quiz-app-backend-2nnz.onrender.com/api/quiz/question/{quizId}/0 \
+  -H "Content-Type: application/json" \
+  -d '{"user_answer":"Paris","visited":true,"attempted":true}'
+🎮 How to Use
+Start Quiz: Enter your email address on the welcome page
+
+Answer Questions: Navigate through 15 trivia questions
+
+Track Progress: Monitor your progress in the sidebar
+
+Submit Quiz: Complete within 30 minutes or auto-submit
+
+View Results: See detailed results with correct answers
+
+🧪 Testing
+Manual Testing
+Test quiz flow from start to finish
+
+Verify timer functionality
+
+Check question navigation
+
+Validate result calculation
+
+API Testing
+You can test the live API endpoints using the following commands:
+
+bash
+# Health Check
+curl https://quiz-app-backend-2nnz.onrender.com/api/health
+
+# Start a quiz
+curl -X POST https://quiz-app-backend-2nnz.onrender.com/api/quiz/start \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@example.com"}'
+🎨 Design System
+Color Palette
+Background: #0a0a0a (Deep Black)
+
+Cards: #1a1a1a (Dark Gray)
+
+Primary: #00ff88 (Tech Green)
+
+Secondary: #0088ff (Tech Blue)
+
+Warning: #ffaa00 (Amber)
+
+Error: #ff4444 (Red)
+
+Text: #ffffff (White)
+
+Typography
+Font Family: Inter, SF Pro Display, System Fonts
+
+Headings: Bold, increased letter spacing
+
+Body: Regular weight, improved line height
+
+🔧 Configuration
+Environment Variables
+Backend (.env)
+
+text
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+NODE_ENV=production
+FRONTEND_URL=https://quiz-app-frontend-eight-eta.vercel.app
+Frontend (.env.production)
+
+text
+REACT_APP_API_URL=https://quiz-app-backend-2nnz.onrender.com/api
+📈 Performance Optimizations
+Lazy Loading: Components loaded on demand
+
+Optimized API Calls: Efficient data fetching
+
+Responsive Images: Optimized for different screen sizes
+
+Caching: Browser caching for static assets
+
+Minification: Production builds are minified
+
+🐛 Known Issues & Solutions
